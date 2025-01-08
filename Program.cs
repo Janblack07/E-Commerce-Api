@@ -1,3 +1,5 @@
+using E_Commerce_API.Servicios;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -49,6 +51,8 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddDbContext<DbEcommerce>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
