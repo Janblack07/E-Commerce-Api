@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using E_Commerce_API.Seeders;
+using Microsoft.EntityFrameworkCore;
 
 namespace E_Commerce_API.Servicios
 {
@@ -9,6 +10,10 @@ namespace E_Commerce_API.Servicios
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            //Seeders//
+            RolSeeder.SeedRoles(modelBuilder);
+            UsuarioSeeder.SeedAdminUser(modelBuilder);
+
         }
     }
 }
