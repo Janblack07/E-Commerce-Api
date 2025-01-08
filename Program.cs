@@ -1,3 +1,4 @@
+using API_TIENDA.Servicios;
 using E_Commerce_API.Servicios;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -50,17 +51,24 @@ builder.Services.AddCors(options =>
                .AllowAnyHeader();
     });
 });
-
+        //Servicios//
+        //Base de Datos//
 builder.Services.AddDbContext<DbEcommerce>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
+       //Cloudinary//
+builder.Services.Configure<CloudinarySettings>(
+    builder.Configuration.GetSection("CloudinarySettings"));
+builder.Services.AddScoped<ICloudinaryService, CloudinaryService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "E-Commerce API");
+    });
 }
 
 app.UseHttpsRedirection();

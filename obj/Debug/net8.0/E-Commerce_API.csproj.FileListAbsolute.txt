@@ -170,3 +170,4 @@ C:\Users\JANBLACK\source\repos\E-Commerce_API\E-Commerce_API\obj\Debug\net8.0\re
 C:\Users\JANBLACK\source\repos\E-Commerce_API\E-Commerce_API\obj\Debug\net8.0\E-Commerce_API.pdb
 C:\Users\JANBLACK\source\repos\E-Commerce_API\E-Commerce_API\obj\Debug\net8.0\E-Commerce_API.genruntimeconfig.cache
 C:\Users\JANBLACK\source\repos\E-Commerce_API\E-Commerce_API\obj\Debug\net8.0\ref\E-Commerce_API.dll
+C:\Users\JANBLACK\source\repos\E-Commerce_API\E-Commerce_API\obj\Debug\net8.0\E-Commerce_API.sourcelink.json
