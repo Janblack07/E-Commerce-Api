@@ -15,5 +15,7 @@
 
         public ICollection<Inventario> Inventario { get; set; }
         public ICollection<DetalleCarrito> DetalleCarrito { get; set; }
+        public ICollection<DetallePedido> DetallePedido { get; set; }
+        public ICollection<DetalleVenta> DetalleVenta { get; set; }
     }
 }

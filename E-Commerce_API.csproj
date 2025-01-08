@@ -21,10 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Modelos\" />
     <Folder Include="Dto\" />
     <Folder Include="Controladores\" />
-    <Folder Include="Seeders\" />
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

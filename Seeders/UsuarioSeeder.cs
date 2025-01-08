@@ -13,11 +13,13 @@ namespace E_Commerce_API.Seeders
                 new Usuario
                 {
                     Id = 1,
-                    Nombre = "Admin",
+                    Nombres = "Admin",
+                    Apellidos= "Admin",
+                    Cedula="1234567890",
                     Email = "admin@tienda.com",
                     Password = password,
                     Direccion = "123 Admin St",
-                    Telefono = "123456789",
+                    Telefono = "098912345",
                     RolId = 1 // Rol Administrador
                 }
             );

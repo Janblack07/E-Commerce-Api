@@ -3,8 +3,8 @@
     public class Usuario
     {
         public int Id { get; set; }
-        public String Nombre { get; set; }
-        public String Apellido { get; set; }
+        public String Nombres { get; set; }
+        public String Apellidos { get; set; }
         public String Cedula { get; set; }
         public String Telefono { get; set; }
 
