@@ -13,17 +13,17 @@ namespace E_Commerce_API.Dto
     }
     public class CreateProductoDto
     {
-        public string Nombre { get; set; }
-        public double Precio { get; set; }
-        public string Descripcion { get; set; }
+        public String Nombre { get; set; }
+        public float Precio { get; set; }
+        public String Descripcion { get; set; }
         public IFormFile Imagen { get; set; } 
         public int CategoriaId { get; set; } 
     }
     public class UpdateProductoDto
     {
-        public string Nombre { get; set; }
-        public double? Precio { get; set; } 
-        public string Descripcion { get; set; }
+        public String Nombre { get; set; }
+        public float? Precio { get; set; } 
+        public String Descripcion { get; set; }
         public IFormFile Imagen { get; set; } 
         public int? CategoriaId { get; set; } 
     }
