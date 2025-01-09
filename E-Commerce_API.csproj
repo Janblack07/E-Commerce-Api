@@ -21,8 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Dto\" />
-    <Folder Include="Controladores\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
 
