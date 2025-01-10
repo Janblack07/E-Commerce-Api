@@ -269,5 +269,93 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controladores.UsuarioController",
+    "Method": "GetClientes",
+    "RelativePath": "api/Usuario/ListaClientes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controladores.UsuarioController",
+    "Method": "GetEmpleados",
+    "RelativePath": "api/Usuario/ListaEmpleados",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controladores.UsuarioController",
+    "Method": "Login",
+    "RelativePath": "api/Usuario/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "E_Commerce_API.Dto.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controladores.UsuarioController",
+    "Method": "Logout",
+    "RelativePath": "api/Usuario/Logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controladores.UsuarioController",
+    "Method": "GetPerfil",
+    "RelativePath": "api/Usuario/Perfil",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controladores.UsuarioController",
+    "Method": "RegisterCliente",
+    "RelativePath": "api/Usuario/RegistroCliente",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "E_Commerce_API.Dto.RegistroDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controladores.UsuarioController",
+    "Method": "RegisterEmpleado",
+    "RelativePath": "api/Usuario/RegistroEmpleado",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "E_Commerce_API.Dto.RegistroDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

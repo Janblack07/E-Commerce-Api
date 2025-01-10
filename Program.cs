@@ -55,8 +55,10 @@ builder.Services.AddCors(options =>
                .AllowAnyHeader();
     });
 });
-        //Servicios//
-        //Base de Datos//
+//Servicios//
+// Registro de servicios
+builder.Services.AddScoped<Authentication>();  // Esto registra el servicio Authentication
+                                       //Base de Datos//
 builder.Services.AddDbContext<DbEcommerce>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
        //Cloudinary//
