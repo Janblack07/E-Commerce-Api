@@ -2,14 +2,17 @@
 using E_Commerce_API.Dto;
 using E_Commerce_API.Modelos;
 using E_Commerce_API.Servicios;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace E_Commerce_API.Controladores
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProductoController : ControllerBase
     {
         private readonly DbEcommerce _context;
@@ -59,6 +62,14 @@ namespace E_Commerce_API.Controladores
         {
             try
             {
+                // Obtener el rol desde el token (ya está validado por [Authorize])
+                var role = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
+
+                // Validar si el usuario no es administrador
+                if (role == "Cliente")
+                {
+                    return StatusCode(403, new { message = "Acceso denegado. Este recurso solo está disponible para administradores y Empleados." });
+                }
                 var producto = await _context.Productos
                     .Include(p => p.Categoria) // Incluir la relación con la categoría
                     .FirstOrDefaultAsync(p => p.Id == id);
@@ -182,6 +193,14 @@ namespace E_Commerce_API.Controladores
         {
             try
             {
+                // Obtener el rol desde el token (ya está validado por [Authorize])
+                var role = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
+
+                // Validar si el usuario no es administrador
+                if (role == "Cliente")
+                {
+                    return StatusCode(403, new { message = "Acceso denegado. Este recurso solo está disponible para administradores y Empleados." });
+                }
                 // Verificar si la categoría existe
                 var categoria = await _context.Categorias.FindAsync(createProductoDto.CategoriaId);
                 if (categoria == null)
@@ -222,6 +241,14 @@ namespace E_Commerce_API.Controladores
         {
             try
             {
+                // Obtener el rol desde el token (ya está validado por [Authorize])
+                var role = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
+
+                // Validar si el usuario no es administrador
+                if (role != "Administrador")
+                {
+                    return StatusCode(403, new { message = "Acceso denegado. Este recurso solo está disponible para administradores." });
+                }
                 var producto = await _context.Productos.FindAsync(id);
                 if (producto == null)
                 {
@@ -283,6 +310,14 @@ namespace E_Commerce_API.Controladores
         {
             try
             {
+                // Obtener el rol desde el token (ya está validado por [Authorize])
+                var role = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
+
+                // Validar si el usuario no es administrador
+                if (role != "Administrador")
+                {
+                    return StatusCode(403, new { message = "Acceso denegado. Este recurso solo está disponible para administradores." });
+                }
                 var producto = await _context.Productos.FindAsync(id);
 
                 if (producto == null)
