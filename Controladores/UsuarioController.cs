@@ -129,10 +129,8 @@ namespace E_Commerce_API.Controladores
             return Ok(perfilDto);
         }
 
-        // Listar empleados (solo para Administradores)
         [HttpGet]
         [Route("ListaEmpleados")]
-        [Authorize(Roles = "Administrador")]
         public async Task<IActionResult> GetEmpleados()
         {
             // Obtener el rol desde el token (ya está validado por [Authorize])
@@ -141,10 +139,7 @@ namespace E_Commerce_API.Controladores
             // Validar si el usuario no es administrador
             if (role != "Administrador")
             {
-                return new ObjectResult(new { message = "Acceso denegado. Este recurso solo está disponible para administradores." })
-                {
-                    StatusCode = 403
-                };
+                return StatusCode(403, new { message = "Acceso denegado. Este recurso solo está disponible para administradores." });
             }
 
             var empleados = await _context.Usuarios
@@ -156,27 +151,30 @@ namespace E_Commerce_API.Controladores
             {
                 return NotFound(new { message = "No se encontraron empleados registrados." });
             }
+
             var result = empleados.Select(e => new UsuarioDto
             {
                 Nombres = e.Nombres,
-                Apellidos=e.Apellidos,
-                Cedula=e.Cedula,
+                Apellidos = e.Apellidos,
+                Cedula = e.Cedula,
                 Email = e.Email,
                 Direccion = e.Direccion,
                 Telefono = e.Telefono,
-                Rol = new RolDto { 
+                Rol = new RolDto
+                {
                     Id = e.Rol.Id,
                     Nombre = e.Rol.Nombre
                 }
             });
 
-            return Ok(new { message = "Todos los empleados : ", result });
+            return Ok(new { message = "Todos los empleados:", result });
         }
+
 
         // Listar clientes (solo para Administradores y Empleados)
         [HttpGet]
         [Route("ListaClientes")]
-        [Authorize(Roles = "Administrador,Empleado")]
+    
         public async Task<IActionResult> GetClientes()
         {
             // Obtener el rol desde el token (ya está validado por [Authorize])
@@ -184,12 +182,9 @@ namespace E_Commerce_API.Controladores
 
             
             // Validar si el usuario no es Administrador o Empleado
-            if (role != "Administrador" && role != "Empleado")
+            if (role == "Cliente")
             {
-                return new ObjectResult(new { message = "Acceso denegado. Este recurso solo está disponible para administradores y empleados." })
-                {
-                    StatusCode = 403
-                };
+                return StatusCode(403, new { message = "Acceso denegado. Este recurso solo está disponible para administradores y Empleados." });
             }
             var clientes = await _context.Usuarios
                 .Include(u => u.Rol)
