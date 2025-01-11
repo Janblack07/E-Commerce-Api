@@ -209,6 +209,7 @@ namespace E_Commerce_API.Controladores
                     Nombre = c.Rol.Nombre
                 }
             });
+           
 
             return Ok(new {message ="Todos los clientes : ", result });
         }

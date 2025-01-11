@@ -1,5 +1,47 @@
 [
   {
+    "ContainingType": "E_Commerce_API.Controladores.CarritoController",
+    "Method": "AgregarProducto",
+    "RelativePath": "api/Carrito/AgregarProducto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "E_Commerce_API.Dto.AgregarAlCarritoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controladores.CarritoController",
+    "Method": "EliminarProducto",
+    "RelativePath": "api/Carrito/EliminarProducto/{productoId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controladores.CarritoController",
+    "Method": "ObtenerCarrito",
+    "RelativePath": "api/Carrito/ObtenerCarrito",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_Commerce_API.Controladores.CategoriaController",
     "Method": "GetAllCategories",
     "RelativePath": "api/Categoria",
