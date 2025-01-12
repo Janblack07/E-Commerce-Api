@@ -157,6 +157,85 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "E_Commerce_API.Controladores.InventarioController",
+    "Method": "ObtenerInventarios",
+    "RelativePath": "api/Inventario",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controladores.InventarioController",
+    "Method": "ObtenerInventarioPorId",
+    "RelativePath": "api/Inventario/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controladores.InventarioController",
+    "Method": "CrearInventario",
+    "RelativePath": "api/Inventario/Crear",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "crearInventarioDto",
+        "Type": "E_Commerce_API.Dto.CrearActualizarInventarioDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controladores.InventarioController",
+    "Method": "ActualizarInventario",
+    "RelativePath": "api/Inventario/Editar/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "actualizarInventarioDto",
+        "Type": "E_Commerce_API.Dto.CrearActualizarInventarioDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controladores.InventarioController",
+    "Method": "EliminarInventario",
+    "RelativePath": "api/Inventario/Eliminar/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_Commerce_API.Controladores.MetodoPagoController",
     "Method": "ListarMetodosPago",
     "RelativePath": "api/MetodoPago",
