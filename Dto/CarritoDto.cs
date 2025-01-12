@@ -11,7 +11,6 @@ namespace E_Commerce_API.Dto
     public class DetalleCarritoDto
     {
         
-      
         public int Cantidad { get; set; }
         public ProductoDto Producto { get; set; }
     }

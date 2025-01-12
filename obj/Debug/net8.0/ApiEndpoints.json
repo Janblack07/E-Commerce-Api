@@ -157,6 +157,96 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "E_Commerce_API.Controladores.MetodoPagoController",
+    "Method": "ListarMetodosPago",
+    "RelativePath": "api/MetodoPago",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controladores.MetodoPagoController",
+    "Method": "ObtenerMetodoPago",
+    "RelativePath": "api/MetodoPago/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controladores.MetodoPagoController",
+    "Method": "CrearPedido",
+    "RelativePath": "api/MetodoPago/Crear",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "crearPedidoDto",
+        "Type": "E_Commerce_API.Dto.CrearPedidoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controladores.PedidoController",
+    "Method": "ObtenerPedido",
+    "RelativePath": "api/Pedido/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controladores.PedidoController",
+    "Method": "CrearPedido",
+    "RelativePath": "api/Pedido/Crear",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "crearPedidoDto",
+        "Type": "E_Commerce_API.Dto.CrearPedidoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "E_Commerce_API.Controladores.PedidoController",
+    "Method": "EliminarPedido",
+    "RelativePath": "api/Pedido/Eliminar/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "E_Commerce_API.Controladores.ProductoController",
     "Method": "GetAllProduct",
     "RelativePath": "api/Producto",
